@@ -152,6 +152,11 @@ div.chartSection{
     width: 100%;
 }
 
+#consultas_otorgadas_de_1ra_vez_y_subsecuentes{
+    height: 300vh;
+    width: 100%;
+}
+
 
 div.lowerRow1{
     height: 3.3rem;
