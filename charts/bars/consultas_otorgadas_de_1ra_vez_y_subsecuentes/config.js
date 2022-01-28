@@ -49,7 +49,7 @@ const c_O_1_v_s_Config = {
             0: { side: 'Estado', label: 'Cantidades'} // Top x-axis.
           }
         },
-        bar: { groupWidth: "70%" }
+        bar: { groupWidth: "50%" }
       },
     charType: (htmlElement) => new google.visualization.BarChart(htmlElement),
     
