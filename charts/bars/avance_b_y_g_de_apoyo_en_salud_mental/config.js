@@ -39,8 +39,12 @@ const a_b_y_g_a_e_Config = {
     // Puedes encontrar todas las opciones de configuración disponibles en:
     // https://developers.google.com/chart/interactive/docs/gallery/barchart#configuration-options
     charOptions: {
+      width: '100%',
+      height: 1600,
         title: 'AVANCE BRIGADAS Y GRUPOS DE APOYO EN SALUD MENTAL ',
-        legend: { position: 'top' },
+        legend: { position: 'top',
+        alignment: 'center'
+      },
         chart: { title: 'Chess opening moves',
                  subtitle: 'popularity by percentage' },
         bars: 'horizontal', // Required for Material Bar Charts.

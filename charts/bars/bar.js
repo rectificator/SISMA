@@ -4,6 +4,8 @@
 google.charts.load('current', {'packages':['corechart']})
 .then(() => {
   drawChart(a_b_y_g_a_e_Config, 'avance_b_y_g_de_apoyo_en_salud_mental');
+  
+  drawChart(c_O_1_v_s_Config, 'consultas_otorgadas_de_1ra_vez_y_subsecuentes');
 });
 
 function drawChart(config, htmlContainerId) {
