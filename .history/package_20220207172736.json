@@ -1,0 +1,31 @@
+{
+  "name": "sisma",
+  "version": "0.1.0",
+  "description": "Sisstema de Informacion en  Salud Mental",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Comando de testeo por implementar\"",
+    "fix-packages": "npm audit fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rectificator/SISMA.git"
+  },
+  "keywords": [
+    "salud",
+    "mental",
+    "informacion",
+    "sistema"
+  ],
+  "author": "DGACO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rectificator/SISMA/issues"
+  },
+  "homepage": "https://github.com/rectificator/SISMA#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}
