@@ -1,45 +1,26 @@
 // Importamos mysql2 con el Promise Wrapper
-import mysql2 from "mysql2/promise";
+import knex from "knex";
+
+
 
 const db = {
     connect: async function (dbUrl){
-        const connection = await mysql2.createPool({
-            host: dbUrl,
-            user: 'root',
-            password: '13pilar13',
-            database: 'sisma',
-            port: 3306,
-            waitForConnections: true,
-            connectionLimit: 10,
-            queueLimit: 0,
-            Promise: global.Promise,
-         });
-         /* connection.connect(function(error){
-            if(error){
-               throw error;
-            }else{
-               console.log('Conexion correcta.');
-            }
-         }); */
-         
-         // execute will internally call prepare and query
-         const [rows, fields] = await connection.execute(
-             `SELECT * FROM a_usuarios`/* ,
-            function(err, results, fields) {
-            console.log('Error: ', err); // err contains Error returned by server
-            console.log('Results: ', results); // results contains rows returned by server
-            console.log('Fields: ', fields.length); // fields contains extra meta data about results, if available
-        
-            // If you execute same statement again, it will be picked from a LRU cache
-            // which will save query preparation time and give better performance
-            }
-         */)
-
-        console.log('Returned Rows: ', rows[0].nombre)
-        console.log('Returned Fields: ', fields.length)
-         
-         //connection.end();
-
+      const options = {
+         client: 'mysql2',
+         connection: {
+           host : dbUrl,
+           port : 3306,
+           user : 'root',
+           password : '13pilar13',
+           database : 'sisma'
+         },
+         pool: { min: 0, max: 10 }
+      }
+      knex(options)
+      
+      //console.log('USUSARIOS: ', await knex(options).select().from('a_usuarios'))
+      
+      console.log('\x1b[34m%s\x1b[0m', '[db] Conectada con éxito')
      }
 }
 

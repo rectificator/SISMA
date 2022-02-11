@@ -5,6 +5,7 @@ const config = {
     publicRoute: process.env.PUBLIC_ROUTE || 'app',
     publicFolder: process.env.PUBLIC_Folder || 'public',
     filesRoute: process.env.FILES_ROUTE || 'files',
+    
 }
 
 export default config
