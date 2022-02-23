@@ -1,8 +1,19 @@
-import knex from "knex";
-import connection from "../../dbConfig.js"
+import QueryBuilder from "../../query.js"
 
-async function model(table='a_usuarios', columns= '*') {
-    return await knex(connection).select().from(table)
+async function fetch(options={}) {
+    let schema = {
+        table: 'a_usuarios'
+    }
+
+    let query = new QueryBuilder()
+    
+    query = query
+    .select()
+    .from(schema.table)
+
+    return await query.build()
 }
 
-export default model
+export default {
+    fetch
+}

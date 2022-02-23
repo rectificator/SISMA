@@ -1,0 +1,56 @@
+GET http://localhost:3000/acciones_comunitarias 
+
+###
+POST http://localhost:3000/acciones_comunitarias
+Content-Type: application/json
+
+{
+      "id": 1,
+      "id_modalidad": 3,
+      "objetivo_actividad": "Hacer una prueba de la tabla acciones_comunitarias",
+      "no_actividades_realizadas": 5,
+      "no_personas_alcanzadas": 1300,
+      "info_registro": {
+        "id": 1,
+        "id_anio": 2,
+        "id_municipio": 3,
+        "id_institucion": 1,
+        "registrada_por": 47,
+        "fecha_registro": "2022-02-10T01:50:23.000Z",
+        "mes": [
+          "Enero"
+        ],
+      },
+      "poblacion": [
+        "masculino 20-29",
+        "femenino 20-29",
+        "no binario 20-29",
+        "masculino 65 y más",
+        "femenino 65 y más",
+        "no binario 65 y más"
+      ],
+      "tipo_actividad": [
+        "Plática/Clase",
+        "Prevención"
+      ]
+    }
+    
+###
+
+GET http://localhost:3000/sisma/info_registro
+###
+GET http://localhost:3000/sisma/modalidad
+###
+GET http://localhost:3000/sisma/anio
+###
+GET http://localhost:3000/sisma/mes
+###
+GET http://localhost:3000/sisma/estado
+###
+GET http://localhost:3000/sisma/municipio
+###
+GET http://localhost:3000/sisma/institucion
+###
+GET http://localhost:3000/sisma/poblacion
+###
+GET http://localhost:3000/sisma/tipo_actividad

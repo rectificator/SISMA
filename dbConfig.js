@@ -1,3 +1,4 @@
+import knex from "knex";
 const connection = {
     client: 'mysql2',
     connection: {
@@ -10,4 +11,6 @@ const connection = {
     pool: { min: 0, max: 10 }
  }
 
- export default connection
+ const knexInstance = knex(connection)
+
+ export default knexInstance
