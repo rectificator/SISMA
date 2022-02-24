@@ -37,6 +37,17 @@ Content-Type: application/json
     
 ###
 
+GET http://localhost:3000/acciones_prevencion_salud
+###
+
+POST http://localhost:3000/acciones_prevencion_salud
+Content-Type: application/json
+
+{
+  "APS": "Acciones de Prevención en Salud"
+}
+###
+
 GET http://localhost:3000/sisma/info_registro
 ###
 GET http://localhost:3000/sisma/modalidad
