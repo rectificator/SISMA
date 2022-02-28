@@ -48,6 +48,39 @@ Content-Type: application/json
 }
 ###
 
+GET http://localhost:3000/atencion_salud
+###
+
+POST http://localhost:3000/atencion_salud
+Content-Type: application/json
+
+{
+  "APS": "Atención en Salud"
+}
+###
+
+GET http://localhost:3000/capacitacion
+###
+
+POST http://localhost:3000/capacitacion
+Content-Type: application/json
+
+{
+  "APS": "Capacitación"
+}
+###
+
+GET http://localhost:3000/suicidio
+###
+
+POST http://localhost:3000/suicidio
+Content-Type: application/json
+
+{
+  "APS": "Suicidio"
+}
+###
+
 GET http://localhost:3000/sisma/info_registro
 ###
 GET http://localhost:3000/sisma/modalidad
@@ -65,3 +98,5 @@ GET http://localhost:3000/sisma/institucion
 GET http://localhost:3000/sisma/poblacion
 ###
 GET http://localhost:3000/sisma/tipo_actividad
+###
+GET http://localhost:3000/sisma/tipo_accion

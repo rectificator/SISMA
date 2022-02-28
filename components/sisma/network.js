@@ -13,6 +13,7 @@ sisma.get('/municipio', fetchThroughGet(controller.getMunicipio))
 sisma.get('/institucion', fetchThroughGet(controller.getInstitucion))
 sisma.get('/poblacion', fetchThroughGet(controller.getPoblacion))
 sisma.get('/tipo_actividad', fetchThroughGet(controller.getTipoActividad))
+sisma.get('/tipo_accion', fetchThroughGet(controller.getTipoAccion))
 
 function fetchThroughGet(fetchFunction){
     return function (request,response){

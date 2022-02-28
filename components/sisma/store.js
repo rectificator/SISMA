@@ -43,6 +43,10 @@ function getTipoActividad(){
     return model.fetchTipoActividad()
 }
 
+function getTipoAccion(){
+    return model.fetchTipoAccion()
+}
+
 
 export default {
     listInfoRegistro: getInfoRegistro,
@@ -54,4 +58,5 @@ export default {
     listInstitucion: getInstitucion,
     listPoblacion: getPoblacion,
     listTipoActividad: getTipoActividad,
+    listTipoAccion: getTipoAccion,
 }

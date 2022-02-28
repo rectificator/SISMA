@@ -9,11 +9,14 @@ class Model {
   }
 
   async fetch() {
-    return 'Atención en Salud INFO';
+    return QueryBuilder.getAtencionSalud()
   }
 
   async insert(data) {
     console.log('Atención en Salud: ', data);
+    let id_info_registro = await QueryBuilder.insertInfoRegistro(data);
+
+    QueryBuilder.insertAtencionSalud(data, id_info_registro);
   }
 
 }

@@ -54,6 +54,11 @@ class Model {
         return fetchedInfoList
     }
 
+    async fetchTipoAccion(){
+        let fetchedInfoList = await this.fetchFromTable('tipo_accion')
+        return fetchedInfoList
+    }
+
     async fetchFromTable(table){
        return await QueryBuilder.getQueryEntries(QueryBuilder.getAllFromTable(table), true)
     }
