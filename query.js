@@ -223,6 +223,30 @@ class QueryBuilder {
     return capacitacion;
   }
 
+  //Consuta de infomación de la tabla politicas_publicas
+  static async getPoliticasPublicas() {
+    let politicas_publicas = await this.getQueryEntries(
+      this.getAllFromTable("politicas_publicas"),
+      true
+    );
+
+    for (
+      let rowIndex = 0;
+      rowIndex < politicas_publicas.length;
+      rowIndex++
+    ) {
+      let row = politicas_publicas[rowIndex];
+
+      let infoRegistro = await this.getInfoRegistro(row.id_info_registro);
+
+      row.info_registro = infoRegistro;
+
+      politicas_publicas[rowIndex] = row;
+    }
+
+    return politicas_publicas;
+  }
+
   //Consuta de infomación de la tabla suicidio
   static async getSuicidio() {
     let suicidio = await this.getQueryEntries(
@@ -596,6 +620,12 @@ class QueryBuilder {
 
     console.log("AS: ", data.atencion_salud);
     await this.insertIntoTable("atencion_salud", data.atencion_salud);
+  }
+  static async insertPoliticasPublicas(data, id_info_registro) {
+    data.politicas_publicas.id_info_registro = id_info_registro;
+
+    console.log("AS: ", data.politicas_publicas);
+    await this.insertIntoTable("politicas_publicas", data.politicas_publicas);
   }
 
   static async insertSuicidio(data, id_info_registro) {
