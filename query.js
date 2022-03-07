@@ -490,11 +490,11 @@ class QueryBuilder {
       .build();
   }
 
-  static async getFromTableWhere(table, column, id) {
+  static async getFromTableWhere(table, column, value) {
     return await QueryBuilderSingleton.getInstance()
       .select()
       .from(table)
-      .where(`${column}=${id}`)
+      .where(`${column}=${value}`)
       .build();
   }
 

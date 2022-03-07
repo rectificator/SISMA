@@ -1,13 +1,17 @@
-import model from "./model.js";
+import Model from "./model.js";
 
-async function getUsers(){
+let model = new Model();
 
-    const users = await model.fetch()
+function getUsers() {
+  return model.fetchUsuarios();
+}
 
-    return users;
-
+function insertUser(data) {
+  model.insertUser(data);
 }
 
 
-
-export const list = getUsers
+export default {
+  list: getUsers,
+  insert: insertUser,
+};

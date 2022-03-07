@@ -1,10 +1,23 @@
 import controller from "./controller.js";
 import { success, error } from "../../network/response.js";
 import { Router } from "express";
+import {
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole,
+  crudVerbs,
+  resourcesList,
+} from "../../middlewares/auth.handler.js";
 
 const suicidio = Router();
 
-suicidio.get("/", fetchThroughGet);
+suicidio.get(
+  "/",
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole(resourcesList.suicidio),
+  fetchThroughGet
+);
 
 function fetchThroughGet(request, response) {
   controller
@@ -17,7 +30,13 @@ function fetchThroughGet(request, response) {
     });
 }
 
-suicidio.post("/", insertByPost);
+suicidio.post(
+  "/",
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole(resourcesList.suicidio, crudVerbs.create),
+  insertByPost
+);
 
 function insertByPost(request, response) {
   controller

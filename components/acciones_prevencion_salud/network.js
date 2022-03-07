@@ -1,10 +1,23 @@
 import controller from "./controller.js";
 import { success, error } from "../../network/response.js";
 import { Router } from "express";
+import {
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole,
+  crudVerbs,
+  resourcesList,
+} from "../../middlewares/auth.handler.js";
 
 const acciones_prevencion_salud = Router();
 
-acciones_prevencion_salud.get("/", fetchThroughGet);
+acciones_prevencion_salud.get(
+  "/",
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole(resourcesList.acciones_prevencion_salud),
+  fetchThroughGet
+);
 
 function fetchThroughGet(request, response) {
   controller
@@ -17,7 +30,13 @@ function fetchThroughGet(request, response) {
     });
 }
 
-acciones_prevencion_salud.post("/", insertByPost);
+acciones_prevencion_salud.post(
+  "/",
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole(resourcesList.acciones_prevencion_salud, crudVerbs.create),
+  insertByPost
+);
 
 function insertByPost(request, response) {
   controller

@@ -1,10 +1,23 @@
 import controller from "./controller.js";
 import { success, error } from "../../network/response.js";
 import { Router } from "express";
+import {
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole,
+  crudVerbs,
+  resourcesList,
+} from "../../middlewares/auth.handler.js";
 
 const capacitacion = Router();
 
-capacitacion.get("/", fetchThroughGet);
+capacitacion.get(
+  "/",
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole(resourcesList.capacitacion),
+  fetchThroughGet
+);
 
 function fetchThroughGet(request, response) {
   controller
@@ -17,7 +30,13 @@ function fetchThroughGet(request, response) {
     });
 }
 
-capacitacion.post("/", insertByPost);
+capacitacion.post(
+  "/",
+  checkApiKey,
+  jwtAuthenticate,
+  checkRole(resourcesList.capacitacion, crudVerbs.create),
+  insertByPost
+);
 
 function insertByPost(request, response) {
   controller
