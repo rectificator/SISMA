@@ -693,4 +693,5 @@ class QueryBuilderSingleton {
 export default {
   QueryBuilder,
   QueryBuilderSingleton,
+  knexInstance
 };

@@ -32,6 +32,7 @@ class Model {
 
   async fetchEstado() {
     let fetchedInfoList = await this.fetchFromTable("estado");
+
     return fetchedInfoList;
   }
 

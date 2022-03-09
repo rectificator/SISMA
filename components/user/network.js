@@ -17,7 +17,6 @@ const user = Router();
 user.get(
   "/",
   checkApiKey,
-  jwtAuthenticate,
   checkRole(resourcesList.user),
   function (request, res) {
     controller
